@@ -1,0 +1,627 @@
+# CEREBRO PERSONAL-SOCIAL
+# Tu segundo cerebro para la vida personal y social
+
+## INTRODUCCIÓN
+
+El "Cerebro Personal-Social" es una aplicación diseñada para funcionar como un segundo cerebro digital que te ayuda a gestionar todos los aspectos de tu vida personal y tus interacciones sociales. Esta herramienta integral te permite capturar, organizar, desarrollar y acceder a toda la información relevante de tu vida, desde tus proyectos y metas personales hasta tus relaciones, eventos sociales y compromisos.
+
+A diferencia de otras aplicaciones que se centran en aspectos específicos como la productividad o las relaciones, Cerebro Personal-Social integra todas estas dimensiones en un único sistema cohesivo, reconociendo que nuestra vida personal y social están intrínsecamente conectadas y se influyen mutuamente.
+
+## ANÁLISIS DE COMPONENTES DE UN CEREBRO PERSONAL-SOCIAL
+
+### 1. Gestión Personal
+
+#### 1.1 Proyectos Personales
+- Seguimiento de proyectos a corto, medio y largo plazo
+- Desglose de proyectos en tareas accionables
+- Establecimiento de plazos y prioridades
+- Visualización del progreso y logros
+
+#### 1.2 Metas y Objetivos
+- Definición de metas según metodología SMART
+- Categorización por áreas de vida (salud, finanzas, desarrollo personal, etc.)
+- Seguimiento de hábitos asociados a metas
+- Visualización de progreso mediante gráficos y estadísticas
+
+#### 1.3 Finanzas Personales
+- Registro de ingresos y gastos
+- Presupuestos por categorías
+- Seguimiento de ahorros e inversiones
+- Recordatorios de pagos recurrentes
+
+#### 1.4 Salud y Bienestar
+- Seguimiento de hábitos saludables
+- Registro de actividad física
+- Monitoreo de patrones de sueño
+- Notas sobre bienestar emocional y mental
+
+#### 1.5 Desarrollo Personal
+- Biblioteca de conocimientos y aprendizajes
+- Registro de cursos y formación
+- Diario de reflexiones personales
+- Seguimiento de lecturas y contenidos consumidos
+
+### 2. Gestión Social
+
+#### 2.1 Red de Contactos
+- Base de datos de contactos personales y profesionales
+- Información detallada de cada persona
+- Historial de interacciones y conversaciones
+- Recordatorios de fechas importantes (cumpleaños, aniversarios)
+
+#### 2.2 Eventos Sociales
+- Calendario de eventos y compromisos
+- Planificación de reuniones y encuentros
+- Gestión de invitaciones y confirmaciones
+- Notas post-evento para seguimiento
+
+#### 2.3 Relaciones Significativas
+- Seguimiento de relaciones importantes (familia, amigos cercanos, pareja)
+- Registro de preferencias, intereses y detalles personales
+- Recordatorios para mantener contacto regular
+- Notas sobre conversaciones importantes
+
+#### 2.4 Networking Profesional
+- Gestión de contactos profesionales
+- Seguimiento de oportunidades laborales
+- Registro de eventos de networking
+- Notas sobre conversaciones profesionales relevantes
+
+#### 2.5 Comunicación
+- Seguimiento de mensajes pendientes
+- Plantillas para comunicaciones recurrentes
+- Registro de conversaciones importantes
+- Recordatorios de seguimiento
+
+### 3. Integración Personal-Social
+
+#### 3.1 Balance Vida-Social
+- Visualización del tiempo dedicado a actividades personales vs. sociales
+- Análisis de patrones de interacción social
+- Recomendaciones para equilibrio entre tiempo personal y social
+- Recordatorios para autocuidado y tiempo de calidad
+
+#### 3.2 Proyectos Colaborativos
+- Gestión de proyectos compartidos con otros
+- Asignación de responsabilidades
+- Seguimiento de contribuciones
+- Comunicación centralizada sobre el proyecto
+
+#### 3.3 Impacto Social
+- Registro de actividades de voluntariado
+- Seguimiento de contribuciones a comunidades
+- Metas de impacto social
+- Conexión entre valores personales y acciones sociales
+
+## FUNCIONALIDADES PRINCIPALES
+
+### 1. Dashboard Personalizado
+Un panel central que muestra una visión general de tu vida personal y social, con widgets configurables que muestran:
+- Proyectos y tareas prioritarias
+- Próximos eventos sociales
+- Recordatorios de contacto
+- Progreso en metas personales
+- Estadísticas de balance vida-social
+
+### 2. Sistema de Proyectos
+- Creación y gestión de proyectos personales y colaborativos
+- Organización por categorías personalizables
+- Establecimiento de objetivos, plazos y métricas de éxito
+- Visualización de progreso y análisis de productividad
+- Integración con tareas y calendario
+
+### 3. Gestor de Metas
+- Definición de metas a corto, medio y largo plazo
+- Desglose en objetivos específicos y medibles
+- Seguimiento visual del progreso
+- Recordatorios y notificaciones adaptativas
+- Análisis de patrones de éxito y obstáculos
+
+### 4. Red de Contactos Inteligente
+- Base de datos completa de contactos personales y profesionales
+- Perfiles detallados con información relevante
+- Sistema de etiquetas y categorización personalizable
+- Recordatorios inteligentes para mantener relaciones
+- Análisis de red social y patrones de interacción
+
+### 5. Calendario Integrado
+- Visualización unificada de eventos personales y sociales
+- Categorización por tipo de evento y relación
+- Recordatorios personalizables
+- Planificación de tiempo personal vs. social
+- Análisis de patrones de uso del tiempo
+
+### 6. Sistema de Hábitos
+- Creación y seguimiento de hábitos personales
+- Vinculación de hábitos con metas específicas
+- Estadísticas de consistencia y progreso
+- Recordatorios adaptables según patrones de comportamiento
+- Recomendaciones basadas en análisis de datos
+
+### 7. Diario Personal
+- Registro diario de pensamientos, reflexiones y acontecimientos
+- Plantillas para diferentes tipos de entradas
+- Etiquetado y categorización para fácil referencia
+- Análisis de sentimientos y patrones emocionales
+- Búsqueda avanzada en entradas pasadas
+
+### 8. Gestor Financiero
+- Registro de ingresos, gastos e inversiones
+- Categorización personalizable
+- Presupuestos y metas financieras
+- Visualización de tendencias y patrones
+- Recordatorios de pagos y compromisos financieros
+
+### 9. Biblioteca de Conocimiento
+- Organización de notas, artículos y recursos
+- Sistema de etiquetado y referencias cruzadas
+- Integración con proyectos y metas
+- Búsqueda avanzada y sugerencias contextuales
+- Recordatorios de repaso espaciado
+
+### 10. Planificador de Eventos
+- Creación y gestión de eventos sociales
+- Listas de invitados y confirmaciones
+- Presupuestos y listas de tareas asociadas
+- Recordatorios y notificaciones
+- Notas post-evento para seguimiento
+
+### 11. Análisis de Balance
+- Visualización del tiempo dedicado a diferentes áreas de vida
+- Análisis de patrones de interacción social
+- Recomendaciones para mejorar el equilibrio
+- Establecimiento de límites y prioridades
+- Recordatorios de autocuidado
+
+### 12. Sistema de Captura Rápida
+- Interfaz minimalista para capturar ideas, tareas o contactos al vuelo
+- Procesamiento automático según categorías predefinidas
+- Acceso rápido desde cualquier sección de la aplicación
+- Integración con asistentes de voz
+- Sincronización multiplataforma
+
+## ARQUITECTURA DE LA APLICACIÓN
+
+### 1. Estructura de Datos
+
+#### 1.1 Proyectos
+```
+{
+  id: String,
+  nombre: String,
+  descripcion: String,
+  categoria: String,
+  fechaInicio: Date,
+  fechaFin: Date,
+  estado: String, // "no iniciado", "en progreso", "completado", "en pausa"
+  prioridad: Number, // 1-5
+  progreso: Number, // 0-100
+  colaboradores: Array, // IDs de contactos
+  tareas: Array, // IDs de tareas
+  notas: Array, // IDs de notas
+  etiquetas: Array
+}
+```
+
+#### 1.2 Metas
+```
+{
+  id: String,
+  nombre: String,
+  descripcion: String,
+  categoria: String,
+  fechaInicio: Date,
+  fechaObjetivo: Date,
+  estado: String,
+  progreso: Number, // 0-100
+  metricaExito: String,
+  objetivosRelacionados: Array, // Sub-objetivos
+  habitosRelacionados: Array, // IDs de hábitos
+  proyectosRelacionados: Array, // IDs de proyectos
+  notas: Array // IDs de notas
+}
+```
+
+#### 1.3 Contactos
+```
+{
+  id: String,
+  nombre: String,
+  apellidos: String,
+  apodo: String,
+  relacion: String, // "familia", "amigo", "colega", etc.
+  importancia: Number, // 1-5
+  fechaNacimiento: Date,
+  contactInfo: {
+    email: String,
+    telefono: String,
+    direccion: String,
+    redesSociales: Object
+  },
+  intereses: Array,
+  preferencias: Object,
+  fechasImportantes: Array,
+  ultimoContacto: Date,
+  frecuenciaIdealContacto: Number, // días
+  historialInteracciones: Array, // IDs de interacciones
+  proyectosCompartidos: Array, // IDs de proyectos
+  notas: String
+}
+```
+
+#### 1.4 Eventos
+```
+{
+  id: String,
+  nombre: String,
+  descripcion: String,
+  tipo: String, // "personal", "social", "profesional", etc.
+  ubicacion: String,
+  fechaInicio: Date,
+  fechaFin: Date,
+  recordatorio: Array, // Múltiples recordatorios posibles
+  invitados: Array, // IDs de contactos
+  estado: String, // "planificado", "confirmado", "completado", "cancelado"
+  tareas: Array, // IDs de tareas relacionadas
+  presupuesto: Number,
+  notas: String,
+  archivoAdjunto: Array // Fotos, documentos, etc.
+}
+```
+
+#### 1.5 Hábitos
+```
+{
+  id: String,
+  nombre: String,
+  descripcion: String,
+  categoria: String,
+  frecuencia: Object, // Días de la semana, intervalos, etc.
+  horaIdeal: Time,
+  duracionEstimada: Number, // minutos
+  fechaInicio: Date,
+  metaRelacionada: String, // ID de meta
+  racha: Number, // días consecutivos
+  historial: Array, // registro de completados
+  recordatorios: Array,
+  notas: String
+}
+```
+
+#### 1.6 Entradas de Diario
+```
+{
+  id: String,
+  fecha: Date,
+  titulo: String,
+  contenido: String,
+  estado_animo: Number, // 1-10
+  etiquetas: Array,
+  ubicacion: String,
+  personas: Array, // IDs de contactos mencionados
+  proyectos: Array, // IDs de proyectos relacionados
+  archivosAdjuntos: Array
+}
+```
+
+#### 1.7 Finanzas
+```
+{
+  id: String,
+  tipo: String, // "ingreso", "gasto", "transferencia", "inversión"
+  cantidad: Number,
+  moneda: String,
+  fecha: Date,
+  categoria: String,
+  subcategoria: String,
+  descripcion: String,
+  recurrente: Boolean,
+  frecuenciaRecurrencia: String,
+  cuentaOrigen: String,
+  cuentaDestino: String,
+  contactoRelacionado: String, // ID de contacto
+  proyectoRelacionado: String, // ID de proyecto
+  comprobante: String // Archivo adjunto
+}
+```
+
+#### 1.8 Notas de Conocimiento
+```
+{
+  id: String,
+  titulo: String,
+  contenido: String,
+  categoria: String,
+  fechaCreacion: Date,
+  fechaModificacion: Date,
+  etiquetas: Array,
+  fuente: String,
+  proyectosRelacionados: Array, // IDs de proyectos
+  contactosRelacionados: Array, // IDs de contactos
+  archivosAdjuntos: Array,
+  recordatorioRepaso: Date
+}
+```
+
+### 2. Módulos Funcionales
+
+#### 2.1 Módulo de Gestión Personal
+- Gestión de proyectos personales
+- Seguimiento de metas y objetivos
+- Monitoreo de hábitos
+- Diario personal
+- Gestión financiera
+- Biblioteca de conocimiento
+
+#### 2.2 Módulo de Gestión Social
+- Gestión de contactos
+- Planificación de eventos
+- Seguimiento de interacciones
+- Recordatorios de fechas importantes
+- Análisis de red social
+
+#### 2.3 Módulo de Integración
+- Dashboard personalizado
+- Análisis de balance vida-social
+- Recomendaciones inteligentes
+- Visualización de conexiones entre elementos
+- Sistema de búsqueda unificada
+
+#### 2.4 Módulo de Utilidades
+- Sistema de captura rápida
+- Exportación e importación de datos
+- Copias de seguridad
+- Configuración de privacidad
+- Personalización de interfaz
+
+## INTERFAZ DE USUARIO
+
+### 1. Diseño General
+- Interfaz limpia y minimalista
+- Sistema de navegación intuitivo
+- Modo claro y oscuro
+- Diseño responsivo para diferentes dispositivos
+- Personalización de colores y temas
+
+### 2. Componentes Principales
+
+#### 2.1 Barra Lateral
+- Acceso rápido a módulos principales
+- Indicadores visuales de estado
+- Botón de captura rápida
+- Acceso a configuración
+
+#### 2.2 Dashboard
+- Widgets personalizables
+- Vista general de proyectos, metas, eventos y contactos prioritarios
+- Estadísticas de balance y progreso
+- Recordatorios y notificaciones importantes
+
+#### 2.3 Vistas de Módulos
+- Interfaz adaptada a cada tipo de contenido
+- Opciones de visualización (lista, tarjetas, calendario, etc.)
+- Filtros y búsqueda contextual
+- Acciones rápidas relevantes al contexto
+
+#### 2.4 Formularios y Editores
+- Campos inteligentes con autocompletado
+- Plantillas predefinidas
+- Editor de texto enriquecido
+- Opciones de adjuntar archivos y enlaces
+
+#### 2.5 Visualizaciones
+- Gráficos de progreso
+- Líneas de tiempo
+- Mapas de relaciones
+- Calendarios interactivos
+
+## FLUJOS DE USUARIO
+
+### 1. Captura de Información
+1. Usuario identifica información que desea capturar
+2. Accede al sistema de captura rápida desde cualquier pantalla
+3. Ingresa la información en el formato adecuado
+4. El sistema categoriza automáticamente o solicita categorización
+5. La información se almacena en la ubicación correspondiente
+6. Usuario recibe confirmación y sugerencias de acciones relacionadas
+
+### 2. Planificación de Proyecto Personal
+1. Usuario accede a la sección de Proyectos
+2. Selecciona "Nuevo Proyecto"
+3. Completa información básica (nombre, descripción, categoría)
+4. Establece objetivos, plazos y métricas de éxito
+5. Añade tareas específicas con fechas y prioridades
+6. Vincula recursos, notas o contactos relevantes
+7. Configura recordatorios y seguimiento
+8. Guarda y visualiza el proyecto en el dashboard
+
+### 3. Gestión de Contacto Social
+1. Usuario accede a la sección de Contactos
+2. Añade nuevo contacto o selecciona existente
+3. Actualiza información relevante
+4. Registra detalles de la última interacción
+5. Establece frecuencia ideal de contacto
+6. Configura recordatorios para próxima interacción
+7. Vincula proyectos, eventos o notas relacionadas
+8. Sistema actualiza recordatorios y sugerencias
+
+### 4. Planificación de Evento Social
+1. Usuario accede a la sección de Eventos
+2. Selecciona "Nuevo Evento"
+3. Ingresa detalles básicos (nombre, fecha, ubicación)
+4. Añade invitados desde la lista de contactos
+5. Crea lista de tareas preparatorias
+6. Establece presupuesto si es necesario
+7. Configura recordatorios
+8. Sistema actualiza calendario y envía notificaciones
+
+### 5. Reflexión y Análisis
+1. Usuario accede al Dashboard o sección de Análisis
+2. Visualiza estadísticas de balance vida-social
+3. Revisa progreso en proyectos y metas
+4. Identifica patrones en interacciones sociales
+5. Recibe recomendaciones personalizadas
+6. Ajusta prioridades y planes según insights
+7. Registra reflexiones en el diario personal
+
+## TECNOLOGÍA Y ALMACENAMIENTO
+
+### 1. Almacenamiento Local
+- Utilización de localStorage para guardar datos en el navegador
+- Estructura de datos optimizada para rendimiento
+- Límites de almacenamiento gestionados automáticamente
+- Compresión de datos para maximizar capacidad
+
+### 2. Sincronización (Opcional para Futuras Versiones)
+- Sincronización con servicios en la nube
+- Cifrado de extremo a extremo
+- Resolución de conflictos
+- Historial de versiones
+
+### 3. Exportación e Importación
+- Exportación completa en formato JSON
+- Exportación selectiva por módulos
+- Importación desde archivos JSON
+- Compatibilidad con formatos comunes (CSV, etc.)
+
+### 4. Seguridad
+- Encriptación de datos sensibles
+- Protección con contraseña opcional
+- Copias de seguridad automáticas
+- Opciones de recuperación
+
+## PERSONALIZACIÓN Y CONFIGURACIÓN
+
+### 1. Preferencias de Usuario
+- Tema visual (claro/oscuro/personalizado)
+- Disposición de elementos en dashboard
+- Notificaciones y recordatorios
+- Formatos de fecha y hora
+
+### 2. Categorías Personalizables
+- Creación de categorías propias para proyectos, contactos, etc.
+- Sistema de etiquetas flexible
+- Códigos de color personalizables
+- Plantillas personalizadas
+
+### 3. Automatizaciones
+- Reglas condicionales configurables
+- Recordatorios inteligentes basados en patrones
+- Categorización automática de entradas
+- Sugerencias contextuales
+
+## GUÍA DE IMPLEMENTACIÓN
+
+### 1. Estructura de Archivos
+```
+cerebro-personal-social/
+├── index.html
+├── css/
+│   ├── styles.css
+│   ├── themes/
+│   │   ├── light.css
+│   │   └── dark.css
+│   └── components/
+│       ├── dashboard.css
+│       ├── projects.css
+│       ├── contacts.css
+│       └── ...
+├── js/
+│   ├── app.js
+│   ├── init.js
+│   ├── modules/
+│   │   ├── storage.js
+│   │   ├── ui.js
+│   │   ├── projects.js
+│   │   ├── goals.js
+│   │   ├── contacts.js
+│   │   ├── events.js
+│   │   ├── habits.js
+│   │   ├── journal.js
+│   │   ├── finances.js
+│   │   ├── knowledge.js
+│   │   ├── analytics.js
+│   │   └── settings.js
+│   └── utils/
+│       ├── date-helpers.js
+│       ├── export-import.js
+│       ├── search.js
+│       └── notifications.js
+└── img/
+    ├── logo.svg
+    ├── icons/
+    └── backgrounds/
+```
+
+### 2. Implementación por Fases
+
+#### Fase 1: Estructura Básica y Almacenamiento
+- Configuración de la estructura HTML/CSS/JS
+- Implementación del sistema de almacenamiento
+- Creación de la interfaz básica
+- Funcionalidades CRUD para entidades principales
+
+#### Fase 2: Módulos Principales
+- Implementación del módulo de Proyectos
+- Implementación del módulo de Contactos
+- Implementación del módulo de Eventos
+- Implementación del módulo de Hábitos
+- Dashboard básico
+
+#### Fase 3: Funcionalidades Avanzadas
+- Sistema de captura rápida
+- Diario personal
+- Biblioteca de conocimiento
+- Gestión financiera
+- Análisis y visualizaciones
+
+#### Fase 4: Integración y Refinamiento
+- Conexiones entre módulos
+- Sistema de búsqueda unificada
+- Recomendaciones inteligentes
+- Optimización de rendimiento
+- Pruebas exhaustivas
+
+#### Fase 5: Personalización y Finalización
+- Opciones de personalización
+- Exportación e importación
+- Documentación completa
+- Pulido final de la interfaz
+
+## RECOMENDACIONES DE USO
+
+### 1. Configuración Inicial
+- Dedica tiempo a configurar categorías y etiquetas personalizadas
+- Importa contactos existentes desde otras plataformas
+- Establece metas iniciales en diferentes áreas de vida
+- Personaliza el dashboard según tus prioridades
+
+### 2. Uso Diario
+- Utiliza la captura rápida para registrar ideas y tareas al vuelo
+- Revisa el dashboard al inicio y final del día
+- Actualiza el diario personal regularmente
+- Registra interacciones sociales significativas
+
+### 3. Revisiones Periódicas
+- Realiza revisiones semanales de proyectos y tareas
+- Analiza mensualmente el balance vida-social
+- Ajusta metas y prioridades trimestralmente
+- Exporta copias de seguridad regularmente
+
+### 4. Prácticas Recomendadas
+- Mantén las entradas concisas y bien etiquetadas
+- Utiliza recordatorios con moderación para evitar fatiga
+- Combina la planificación con espacio para espontaneidad
+- Enfócate en la calidad sobre la cantidad en relaciones
+
+## CONCLUSIÓN
+
+El "Cerebro Personal-Social" representa una evolución en la gestión personal al reconocer la naturaleza interconectada de nuestra vida individual y nuestras relaciones sociales. Esta aplicación no solo te ayuda a organizar información, sino que te proporciona insights valiosos sobre cómo equilibrar diferentes aspectos de tu vida.
+
+Al integrar la gestión de proyectos personales, metas, relaciones y eventos sociales en un único sistema, podrás tomar decisiones más conscientes sobre cómo invertir tu tiempo y energía, cultivar relaciones significativas y avanzar hacia tus objetivos más importantes.
+
+Esta herramienta está diseñada para adaptarse a tus necesidades específicas y evolucionar contigo, convirtiéndose en un verdadero segundo cerebro que amplifica tus capacidades naturales y te ayuda a vivir una vida más intencional, equilibrada y plena.
+
+---
+
+© 2025 Cerebro Personal-Social | Tu segundo cerebro para la vida personal y social
