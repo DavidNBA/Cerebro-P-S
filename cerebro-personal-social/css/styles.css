@@ -1,0 +1,248 @@
+/* Basic Body Styling */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Light grey background */
+    color: #333;
+    display: flex; /* Use flexbox for overall layout */
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Sidebar (Header) Styling */
+header {
+    width: 250px; /* Fixed width for sidebar */
+    background: #2c3e50; /* Dark blue/grey for sidebar */
+    color: #ecf0f1; /* Light text for sidebar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0 0 20px 0;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+#main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#main-nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    transition: background-color 0.2s, padding-left 0.2s;
+}
+
+#main-nav ul li a:hover,
+#main-nav ul li a.active {
+    background-color: #34495e; /* Slightly lighter dark blue/grey */
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+/* Main Content Area Styling */
+main {
+    flex-grow: 1; /* Takes remaining space */
+    padding: 25px;
+    overflow-y: auto; /* Scroll content if it overflows */
+}
+
+.container { /* Renamed from #app to .container for general use if needed, or keep #app-content specific */
+    width: 100%; /* Takes full width of the main area */
+    max-width: 1200px; /* Optional max width for content within main */
+    margin: 0 auto; /* Center content if max-width is set */
+    padding: 0; /* Reset padding if main already has it */
+}
+
+/* Footer Styling - No longer part of the main flex layout if body is flex */
+/* If footer is desired, it needs to be handled within the main content scroll or outside the body flex */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #e9ecef; /* Light grey for footer */
+    color: #6c757d; /* Muted text color */
+    border-top: 1px solid #dee2e6;
+    /* position: sticky; bottom: 0; width: 100%; /* Example for sticky footer */
+}
+
+
+/* Basic Dark Mode */
+body.dark-mode {
+    background-color: #1a1a1a; /* Darker background */
+    color: #e0e0e0; /* Lighter text */
+}
+
+body.dark-mode header {
+    background: #1f2937; /* Darker sidebar */
+    color: #d1d5db; /* Adjust text for darker sidebar */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+}
+
+body.dark-mode #main-nav ul li a {
+    color: #d1d5db;
+}
+
+body.dark-mode #main-nav ul li a:hover,
+body.dark-mode #main-nav ul li a.active {
+    background-color: #374151; /* Darker hover for sidebar links */
+}
+
+body.dark-mode footer {
+    background: #1f2937; /* Darker footer */
+    color: #9ca3af;
+    border-top: 1px solid #374151;
+}
+
+/* UI Elements Styling */
+.card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+}
+
+body.dark-mode .card {
+    background-color: #2d3748; /* Dark card background */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button, .button { /* Added .button class for link-styled buttons */
+    display: inline-block;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button:hover, .button:hover {
+    background-color: #0056b3; /* Darker blue */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+body.dark-mode button, body.dark-mode .button {
+    background-color: #0056b3; /* Adjust if primary blue is too bright */
+    /* color: #e0e0e0; /* Ensure text contrast if needed */
+}
+
+body.dark-mode button:hover, body.dark-mode .button:hover {
+    background-color: #004494;
+}
+
+/* Secondary button style */
+button.secondary, .button.secondary {
+    background-color: #6c757d; /* Grey */
+}
+button.secondary:hover, .button.secondary:hover {
+    background-color: #5a6268;
+}
+body.dark-mode button.secondary {
+    background-color: #4a5568;
+}
+body.dark-mode button.secondary:hover {
+    background-color: #2d3748;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    border: 1px solid #ced4da; /* Light grey border */
+    box-sizing: border-box;
+    font-size: 0.95em;
+    background-color: #fff;
+    color: #495057;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    outline: none;
+}
+
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="date"],
+body.dark-mode input[type="tel"],
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #2d3748; /* Dark input background */
+    color: #e0e0e0; /* Light text for inputs */
+    border-color: #4a5568; /* Darker border */
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+    border-color: #0056b3; /* Dark mode focus border */
+    box-shadow: 0 0 0 0.2rem rgba(0,86,179,.5);
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+th, td {
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+}
+th {
+    background-color: #e9ecef;
+}
+body.dark-mode th {
+    background-color: #374151;
+    border-bottom-color: #4a5568;
+}
+body.dark-mode td {
+    border-bottom-color: #4a5568;
+}
+
+/* Dashboard Grid styles */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 1.5rem; /* Spacing between cards */
+    margin-top: 1rem; /* Space below the "Dashboard Principal" title */
+}
+
+/* Remove footer from flex layout if it's meant to be at the very bottom of the viewport */
+/* body { display: flex; flex-direction: column; min-height: 100vh; } */
+/* main { flex-grow: 1; } */
+/* The above is an alternative if footer should always be at bottom, but current CSS has body as row flex */
+
+/* The footer styling was simplified, if it's outside the main body flex container */
+/* If body is `display: flex; flex-direction: column;`, then `footer` needs no special positioning to be at the bottom */
+/* If body is `display: flex;` (row direction for sidebar), then footer needs to be handled differently.
+   For simplicity, the current CSS assumes footer might be part of the scrollable main content or not present.
+   If a sticky footer is needed with the sidebar layout, HTML structure might need adjustment or more complex CSS.
+   Let's remove the footer for now to simplify the two-column layout.
+*/
+footer { display: none; }
