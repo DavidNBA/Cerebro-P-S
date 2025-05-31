@@ -1,269 +1,279 @@
-import {
-    renderSidebar, renderPage,
-    renderProjectList, renderProjectForm,
-    renderContactList, renderContactForm,
-    renderDashboard,
-    renderQuickCaptureForm, // Added Quick Capture UI function
-    createHTMLElement
-} from './modules/ui.js';
-import { loadTheme, initThemeSwitcher } from './modules/themeManager.js';
-import * as projectManager from './modules/projectManager.js';
-import * as contactManager from './modules/contactManager.js';
-import { saveQuickNote } from './modules/storage.js'; // For Quick Capture
-import { generateId } from './utils/helpers.js';   // For Quick Capture
+document.addEventListener('DOMContentLoaded', () => {
+    let proyectos = [];
 
-console.log('CerebroApp Vanilla JS Initialized');
+    // Referencias a elementos del DOM
+    const formNuevoProyecto = document.getElementById('form-nuevo-proyecto');
+    const listaProyectosDiv = document.getElementById('lista-proyectos');
 
-const appContentElement = document.getElementById('app-content');
-const mainNavElement = document.getElementById('main-nav');
+    const proyectoNombreInput = document.getElementById('proyecto-nombre');
+    const proyectoDescripcionInput = document.getElementById('proyecto-descripcion');
+    const proyectoFechaLimiteInput = document.getElementById('proyecto-fecha-limite');
+    const proyectoPrioridadInput = document.getElementById('proyecto-prioridad');
 
-// --- Project Page Rendering Logic ---
-let projectFormContainer = null; // To hold the project form when displayed
-
-function showProjectForm(projectToEdit = null) {
-    if (!projectFormContainer) {
-        projectFormContainer = createHTMLElement('div', { id: 'project-form-container', class: 'my-4' });
-    }
-    projectFormContainer.innerHTML = ''; // Clear previous form
-
-    const form = renderProjectForm(projectToEdit || {}, (formData) => {
-        if (projectToEdit && projectToEdit.id) {
-            projectManager.updateProject(projectToEdit.id, formData);
-        } else {
-            projectManager.addProject(formData);
-        }
-        renderProjectsPageContent(); // Re-render the list
-        projectFormContainer.innerHTML = ''; // Hide form
-    });
-    projectFormContainer.appendChild(form);
-    // Insert form container at the top of appContentElement or specific place
-    if (appContentElement.firstChild) {
-        appContentElement.insertBefore(projectFormContainer, appContentElement.firstChild);
-    } else {
-        appContentElement.appendChild(projectFormContainer);
-    }
-}
-
-function renderProjectsPageContent() {
-    // Ensure form container is removed if it exists outside the main rendering flow
-    if (projectFormContainer && projectFormContainer.parentNode) {
-        projectFormContainer.innerHTML = ''; // Clear it before potentially re-rendering list
+    /**
+     * Formatea una fecha para visualización.
+     * @param {Date|string|null} fecha - La fecha a formatear.
+     * @returns {string} Fecha formateada o 'N/A'.
+     */
+    function formatearFecha(fecha) {
+        if (!fecha) return 'N/A';
+        // Si fecha ya es un objeto Date, usarlo, sino, intentar crear uno.
+        const dateObj = fecha instanceof Date ? fecha : new Date(fecha);
+        if (isNaN(dateObj.getTime())) return 'Fecha inválida';
+        return dateObj.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
     }
 
-    const projects = projectManager.getAllProjects();
-    const projectListElement = renderProjectList(
-        projects,
-        (projectId) => { // onEdit
-            const project = projectManager.getProjectById(projectId);
-            if (project) {
-                showProjectForm(project);
-            }
-        },
-        (projectId) => { // onDelete
-            if (confirm('¿Estás seguro de que quieres eliminar este proyecto y sus tareas asociadas?')) {
-                projectManager.deleteProjectById(projectId);
-                renderProjectsPageContent(); // Re-render list
-            }
-        }
-    );
-
-    const pageContainer = createHTMLElement('div');
-    const title = createHTMLElement('h2', { textContent: 'Proyectos' });
-    const addButton = createHTMLElement('button', { class: 'button my-4', textContent: 'Añadir Nuevo Proyecto' });
-    addButton.addEventListener('click', () => showProjectForm());
-
-    pageContainer.appendChild(title);
-    pageContainer.appendChild(addButton);
-    // The projectFormContainer will be managed by showProjectForm, typically inserted before the list
-    if (projectFormContainer && !projectFormContainer.firstChild) { // If form was hidden, ensure container is gone or ready
-        // This logic might need refinement based on where form is shown
-    }
-    pageContainer.appendChild(projectListElement);
-
-    renderPage('projects', pageContainer, appContentElement);
-}
-
-// --- Contact Page Rendering Logic ---
-let contactFormContainer = null; // To hold the contact form when displayed
-
-function showContactForm(contactToEdit = null) {
-    if (!contactFormContainer) {
-        contactFormContainer = createHTMLElement('div', { id: 'contact-form-container', class: 'my-4' });
-    }
-    contactFormContainer.innerHTML = ''; // Clear previous form
-
-    const form = renderContactForm(contactToEdit || {}, (formData) => {
-        if (contactToEdit && contactToEdit.id) {
-            contactManager.updateContact(contactToEdit.id, formData);
-        } else {
-            contactManager.addContact(formData);
-        }
-        renderContactsPageContent(); // Re-render the list
-        contactFormContainer.innerHTML = ''; // Hide form
-    });
-    contactFormContainer.appendChild(form);
-    if (appContentElement.firstChild) {
-        appContentElement.insertBefore(contactFormContainer, appContentElement.firstChild);
-    } else {
-        appContentElement.appendChild(contactFormContainer);
-    }
-}
-
-function renderContactsPageContent() {
-    if (contactFormContainer && contactFormContainer.parentNode) {
-        contactFormContainer.innerHTML = '';
-    }
-
-    const contacts = contactManager.getAllContacts();
-    const contactListElement = renderContactList(
-        contacts,
-        (contactId) => { // onEdit
-            const contact = contactManager.getContactById(contactId);
-            if (contact) {
-                showContactForm(contact);
-            }
-        },
-        (contactId) => { // onDelete
-            if (confirm('¿Estás seguro de que quieres eliminar este contacto?')) {
-                contactManager.deleteContactById(contactId);
-                renderContactsPageContent(); // Re-render list
-            }
-        }
-    );
-
-    const pageContainer = createHTMLElement('div');
-    const title = createHTMLElement('h2', { textContent: 'Contactos' });
-    const addButton = createHTMLElement('button', { class: 'button my-4', textContent: 'Añadir Nuevo Contacto' });
-    addButton.addEventListener('click', () => showContactForm());
-
-    pageContainer.appendChild(title);
-    pageContainer.appendChild(addButton);
-    pageContainer.appendChild(contactListElement);
-
-    renderPage('contacts', pageContainer, appContentElement);
-}
-
-
-// --- Routes Configuration ---
-
-function renderDashboardPageContent() {
-    const projects = projectManager.getAllProjects();
-    const contacts = contactManager.getAllContacts();
-
-    const summaryData = {
-        projectCount: projects.length,
-        activeProjects: projects.filter(p => p.estado === 'en progreso').length,
-        contactCount: contacts.length,
-        // upcomingEvents: 0 // Placeholder for future
-    };
-
-    const dashboardElement = renderDashboard(summaryData);
-    const pageContainer = createHTMLElement('div', {}, [
-        createHTMLElement('h2', { textContent: 'Dashboard Principal' }),
-        dashboardElement
-    ]);
-    renderPage('dashboard', pageContainer, appContentElement);
-}
-
-const routesConfig = {
-    '/': {
-        id: 'dashboard',
-        title: 'Dashboard',
-        navText: 'Dashboard',
-        render: renderDashboardPageContent
-    },
-    '/projects': {
-        id: 'projects',
-        title: 'Projects',
-        navText: 'Proyectos',
-        render: renderProjectsPageContent
-    },
-    '/contacts': {
-        id: 'contacts',
-        title: 'Contacts',
-        navText: 'Contactos',
-        render: renderContactsPageContent // Updated to use the new render function
-    },
-    '/events': {
-        id: 'events',
-        title: 'Events',
-        navText: 'Eventos',
-        render: () => {
-            // Placeholder
-            const eventsContent = createHTMLElement('div', {}, [
-                createHTMLElement('h2', { textContent: 'Eventos' }),
-                createHTMLElement('p', { textContent: 'Aquí podrás gestionar tus eventos.' })
-            ]);
-            renderPage('events', eventsContent, appContentElement);
-        }
-    },
-};
-
-function generateNavLinks() {
-    return Object.keys(routesConfig).map(routeKey => ({
-        href: `#${routeKey}`,
-        text: routesConfig[routeKey].navText
-    }));
-}
-
-function router() {
-    const path = window.location.hash.substring(1) || '/';
-    const route = routesConfig[path];
-
-    if (route && route.render) {
-        document.title = `CerebroApp - ${route.title}`;
-        route.render(); // Call the render function for the route
-    } else {
-        document.title = 'CerebroApp - Not Found';
-        if (appContentElement) {
-            renderPage('not-found', '<h2>404 - Page Not Found</h2>', appContentElement);
-        }
-    }
-    // Update active links in sidebar
-    if (mainNavElement) {
-        renderSidebar(generateNavLinks(), mainNavElement);
-    }
-}
-
-function initializeApp() {
-    if (!mainNavElement || !appContentElement) {
-        console.error('Essential navigation or content elements not found.');
-        return;
-    }
-
-    renderSidebar(generateNavLinks(), mainNavElement);
-    loadTheme();
-
-    const header = document.querySelector('header'); // This is our sidebar
-    if (header) {
-        // Theme Switcher
-        let themeSwitcherButton = document.getElementById('theme-switcher-button');
-        if (!themeSwitcherButton) {
-            themeSwitcherButton = createHTMLElement('button', {
-                id: 'theme-switcher-button',
-                class: 'button theme-switcher mt-4 mb-2 w-full', // Added mt-4, mb-2, w-full for spacing
+    /**
+     * Guarda los proyectos en localStorage.
+     */
+    function guardarProyectos() {
+        localStorage.setItem('proyectos', JSON.stringify(proyectos.map(p => {
+            // Convertir instancias de clase a objetos planos para serialización correcta
+            const proyectoPlano = {...p};
+            proyectoPlano.tareas = p.tareas.map(t => ({...t}));
+            // Convertir fechas a ISO strings
+            proyectoPlano.fechaCreacion = p.fechaCreacion.toISOString();
+            if (p.fechaLimite) proyectoPlano.fechaLimite = p.fechaLimite.toISOString();
+            proyectoPlano.tareas = p.tareas.map(t => {
+                const tareaPlana = {...t};
+                tareaPlana.fechaCreacion = t.fechaCreacion.toISOString();
+                if (t.fechaLimite) tareaPlana.fechaLimite = t.fechaLimite.toISOString();
+                return tareaPlana;
             });
-             // Appending after nav, before potential other items, or just at the end of header.
-            header.appendChild(themeSwitcherButton);
-        }
-        initThemeSwitcher('theme-switcher-button');
-
-        // Quick Capture Form
-        const quickCaptureFormElement = renderQuickCaptureForm((noteText) => {
-            const newNote = {
-                id: generateId(),
-                content: noteText,
-                createdAt: new Date().toISOString(),
-            };
-            saveQuickNote(newNote);
-            alert('Nota rápida guardada!'); // Simple feedback
-            // Optionally, could also render quick notes somewhere or clear a list
-        });
-        header.appendChild(quickCaptureFormElement); // Append QC form at the end of the sidebar
+            return proyectoPlano;
+        })));
     }
 
-    window.addEventListener('hashchange', router);
-    router(); // Initial page load
-}
+    /**
+     * Carga los proyectos desde localStorage.
+     */
+    function cargarProyectos() {
+        const proyectosGuardados = localStorage.getItem('proyectos');
+        if (proyectosGuardados) {
+            const proyectosPlanos = JSON.parse(proyectosGuardados);
+            proyectos = proyectosPlanos.map(pp => {
+                const proyecto = new Proyecto(pp.nombre, pp.descripcion, pp.fechaLimite ? new Date(pp.fechaLimite) : null, pp.prioridad);
+                proyecto.id = pp.id;
+                proyecto.fechaCreacion = new Date(pp.fechaCreacion);
+                proyecto.tareas = pp.tareas.map(tp => {
+                    const tarea = new Tarea(tp.nombre, tp.descripcion, tp.fechaLimite ? new Date(tp.fechaLimite) : null, tp.prioridad);
+                    tarea.id = tp.id;
+                    tarea.completada = tp.completada;
+                    tarea.fechaCreacion = new Date(tp.fechaCreacion);
+                    return tarea;
+                });
+                return proyecto;
+            });
+        }
+    }
 
-window.addEventListener('load', initializeApp);
+    /**
+     * Renderiza todos los proyectos y sus tareas en el DOM.
+     */
+    function renderizarProyectos() {
+        listaProyectosDiv.innerHTML = ''; // Limpiar vista actual
+
+        if (proyectos.length === 0) {
+            listaProyectosDiv.innerHTML = '<p>No hay proyectos aún. ¡Crea uno!</p>';
+            return;
+        }
+
+        proyectos.forEach(proyecto => {
+            const proyectoDiv = document.createElement('div');
+            proyectoDiv.classList.add('proyecto');
+            proyectoDiv.setAttribute('data-id-proyecto', proyecto.id);
+
+            let prioridadClase = '';
+            if (proyecto.prioridad === 'alta') prioridadClase = 'prioridad-alta';
+            else if (proyecto.prioridad === 'media') prioridadClase = 'prioridad-media';
+            else if (proyecto.prioridad === 'baja') prioridadClase = 'prioridad-baja';
+
+            proyectoDiv.innerHTML = `
+                <h3>${proyecto.nombre}</h3>
+                <p><strong>Descripción:</strong> ${proyecto.descripcion || 'N/A'}</p>
+                <p><strong>Fecha Límite:</strong> ${formatearFecha(proyecto.fechaLimite)}</p>
+                <p><strong>Prioridad:</strong> <span class="${prioridadClase}">${proyecto.prioridad.charAt(0).toUpperCase() + proyecto.prioridad.slice(1)}</span></p>
+                <p><strong>Progreso:</strong> ${proyecto.progreso.toFixed(2)}%</p>
+
+                <h4>Tareas</h4>
+                <ul class="lista-tareas" data-id-proyecto-tareas="${proyecto.id}">
+                    ${proyecto.tareas.map(tarea => {
+                        let tareaPrioridadClase = '';
+                        if (tarea.prioridad === 'alta') tareaPrioridadClase = 'prioridad-alta';
+                        else if (tarea.prioridad === 'media') tareaPrioridadClase = 'prioridad-media';
+                        else if (tarea.prioridad === 'baja') tareaPrioridadClase = 'prioridad-baja';
+
+                        return `
+                        <li class="${tarea.completada ? 'completada' : ''}">
+                            <input type="checkbox" class="tarea-checkbox" data-id-proyecto="${proyecto.id}" data-id-tarea="${tarea.id}" ${tarea.completada ? 'checked' : ''}>
+                            <span>${tarea.nombre}</span>
+                            <small class="tarea-detalles">
+                                (Prioridad: <span class="${tareaPrioridadClase}">${tarea.prioridad}</span>,
+                                Límite: ${formatearFecha(tarea.fechaLimite)})
+                                ${tarea.descripcion ? `- ${tarea.descripcion}` : ''}
+                            </small>
+                            <button class="btn-eliminar-tarea" data-id-proyecto="${proyecto.id}" data-id-tarea="${tarea.id}">Eliminar</button>
+                        </li>`;
+                    }).join('') || '<li>No hay tareas asignadas.</li>'}
+                </ul>
+
+                <form class="form-nueva-tarea" data-id-proyecto="${proyecto.id}">
+                    <h5>Añadir Nueva Tarea</h5>
+                    <input type="hidden" name="id-proyecto-asociado" value="${proyecto.id}">
+                    <div>
+                        <label>Nombre Tarea:</label>
+                        <input type="text" name="tarea-nombre" required>
+                    </div>
+                    <div>
+                        <label>Descripción Tarea:</label>
+                        <textarea name="tarea-descripcion"></textarea>
+                    </div>
+                    <div>
+                        <label>Fecha Límite Tarea:</label>
+                        <input type="date" name="tarea-fecha-limite">
+                    </div>
+                    <div>
+                        <label>Prioridad Tarea:</label>
+                        <select name="tarea-prioridad">
+                            <option value="media">Media</option>
+                            <option value="alta">Alta</option>
+                            <option value="baja">Baja</option>
+                        </select>
+                    </div>
+                    <button type="submit">Añadir Tarea</button>
+                </form>
+            `;
+            listaProyectosDiv.appendChild(proyectoDiv);
+        });
+        guardarProyectos(); // Guardar después de cualquier cambio que afecte la visualización
+    }
+
+    /**
+     * Maneja el envío del formulario para crear un nuevo proyecto.
+     * @param {Event} event - El evento de envío del formulario.
+     */
+    function manejarSubmitNuevoProyecto(event) {
+        event.preventDefault();
+
+        const nombre = proyectoNombreInput.value.trim();
+        const descripcion = proyectoDescripcionInput.value.trim();
+        const fechaLimite = proyectoFechaLimiteInput.value ? new Date(proyectoFechaLimiteInput.value + 'T00:00:00') : null; // Asegurar que se toma la fecha localmente
+        const prioridad = proyectoPrioridadInput.value;
+
+        if (!nombre) {
+            alert("El nombre del proyecto es obligatorio.");
+            return;
+        }
+
+        const nuevoProyecto = new Proyecto(nombre, descripcion, fechaLimite, prioridad);
+        proyectos.push(nuevoProyecto);
+
+        renderizarProyectos();
+        formNuevoProyecto.reset();
+    }
+
+    /**
+     * Maneja el envío del formulario para añadir una nueva tarea a un proyecto.
+     * @param {Event} event - El evento de envío del formulario.
+     */
+    function manejarSubmitNuevaTarea(event) {
+        event.preventDefault();
+        const form = event.target;
+        const idProyecto = form.getAttribute('data-id-proyecto');
+        const proyecto = proyectos.find(p => p.id === idProyecto);
+
+        if (!proyecto) return;
+
+        const nombreTarea = form.elements['tarea-nombre'].value.trim();
+        const descripcionTarea = form.elements['tarea-descripcion'].value.trim();
+        const fechaLimiteTarea = form.elements['tarea-fecha-limite'].value ? new Date(form.elements['tarea-fecha-limite'].value + 'T00:00:00') : null;
+        const prioridadTarea = form.elements['tarea-prioridad'].value;
+
+        if (!nombreTarea) {
+            alert("El nombre de la tarea es obligatorio.");
+            return;
+        }
+
+        const nuevaTarea = new Tarea(nombreTarea, descripcionTarea, fechaLimiteTarea, prioridadTarea);
+        proyecto.agregarTarea(nuevaTarea);
+
+        renderizarProyectos();
+        form.reset();
+    }
+
+    /**
+     * Maneja el cambio de estado (completada/pendiente) de una tarea.
+     * @param {Event} event - El evento de cambio del checkbox.
+     */
+    function manejarCambioEstadoTarea(event) {
+        const checkbox = event.target;
+        const idProyecto = checkbox.getAttribute('data-id-proyecto');
+        const idTarea = checkbox.getAttribute('data-id-tarea');
+
+        const proyecto = proyectos.find(p => p.id === idProyecto);
+        if (!proyecto) return;
+
+        const tarea = proyecto.tareas.find(t => t.id === idTarea);
+        if (!tarea) return;
+
+        if (checkbox.checked) {
+            tarea.marcarCompleta();
+        } else {
+            tarea.marcarPendiente();
+        }
+        renderizarProyectos(); // Re-renderizar para actualizar progreso y estilos
+    }
+
+    /**
+     * Maneja la eliminación de una tarea.
+     * @param {string} idProyecto - ID del proyecto al que pertenece la tarea.
+     * @param {string} idTarea - ID de la tarea a eliminar.
+     */
+    function manejarEliminarTarea(idProyecto, idTarea) {
+        const proyecto = proyectos.find(p => p.id === idProyecto);
+        if (!proyecto) return;
+
+        const tareaEliminada = proyecto.eliminarTarea(idTarea);
+        if (tareaEliminada) {
+            renderizarProyectos();
+        }
+    }
+
+    // --- Event Listeners ---
+    formNuevoProyecto.addEventListener('submit', manejarSubmitNuevoProyecto);
+
+    // Delegación de eventos para elementos dinámicos (formularios de tareas, checkboxes, botones de eliminar)
+    listaProyectosDiv.addEventListener('submit', function(event) {
+        if (event.target.classList.contains('form-nueva-tarea')) {
+            manejarSubmitNuevaTarea(event);
+        }
+    });
+
+    listaProyectosDiv.addEventListener('change', function(event) {
+        if (event.target.classList.contains('tarea-checkbox')) {
+            manejarCambioEstadoTarea(event);
+        }
+    });
+
+    listaProyectosDiv.addEventListener('click', function(event) {
+        if (event.target.classList.contains('btn-eliminar-tarea')) {
+            event.preventDefault();
+            const idProyecto = event.target.getAttribute('data-id-proyecto');
+            const idTarea = event.target.getAttribute('data-id-tarea');
+            if (confirm('¿Estás seguro de que quieres eliminar esta tarea?')) {
+                manejarEliminarTarea(idProyecto, idTarea);
+            }
+        }
+    });
+
+
+    // --- Inicialización ---
+    cargarProyectos(); // Cargar proyectos desde localStorage al inicio
+    renderizarProyectos(); // Renderizar los proyectos cargados o la lista vacía
+});
+
+// Pequeño estilo para tareas completadas (se podría mover a style.css pero es más dinámico aquí)
+const styleSheet = document.createElement("style");
+styleSheet.type = "text/css";
+styleSheet.innerText = ".lista-tareas li.completada span { text-decoration: line-through; color: #6c757d; }";
+document.head.appendChild(styleSheet);
